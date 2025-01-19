@@ -3,11 +3,11 @@ import mongoose from "mongoose";
 const TodoScheema = new mongoose.Schema({
     todoContent:{
         type: String,
-        require: true,
+        required: true,
     },
     completed:{
         type: Boolean,
-        require: true
+        required: true
     }
 })
 

@@ -1,8 +1,11 @@
 import express, { Router } from "express";
-import createTodo from "../Controller/todo.Controller.js";
+import  { createTodo,getTodos, updateTodo } from "../Controller/todo.Controller.js";
 
-const router = Router()
+const todoRouter = Router();
 
-router.post("/create", createTodo)
+todoRouter.post("/create", createTodo);
+todoRouter.get("/fetch", getTodos)
+todoRouter.put("/update:/id", updateTodo)
 
-export default router;
+export { todoRouter};
+
