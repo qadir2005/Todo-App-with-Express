@@ -44,3 +44,16 @@ export const updateTodo = async (req,res)=>{
     }
 
 }
+
+// todo ko delete krna hai 
+
+export const deleteTodo = async(req,res)=>{
+    try {
+        const todo = await Todo.findByIdAndDelete(req.params.id)
+    res.json({message:"todo delete ho gya hai", todo})        
+    } catch (error) {
+        res.json({message:"todo delete nhi horha khuch error hai", todo:null})        
+
+    }
+
+}
